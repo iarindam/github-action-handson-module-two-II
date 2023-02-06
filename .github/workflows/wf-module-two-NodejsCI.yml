@@ -16,6 +16,7 @@ jobs:
         uses: ./.github/workflows/actions/nodejsbuild
   nodejstest:
     runs-on: ${{ matrix.os }}
+    needs: nodejsbuild
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
