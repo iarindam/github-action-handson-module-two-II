@@ -1,0 +1,16 @@
+name: module-two-workflow-NodejsCI
+run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+on:
+  push:
+    branches: ["main"]
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-lastest, windows-2016]
+        node-version: [8.x, 10.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: NodejsCI build action
+        uses: ./.github/workflows/actions/NodeJSCI
