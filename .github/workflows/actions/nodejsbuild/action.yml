@@ -1,12 +1,12 @@
-name: nodejsCI build action
+name: Nodejs CI build action
 description: the sample Nodejs CI build action
 runs: 
   using: "composite"
   steps:
-  - uses: actions/setup-node@v1
+  - uses: actions/setup-node@v3
     with:
-      node-version: 10
-  - name: Use Node.js 10      
+      node-version: 16
+  - name: Use Node.js 16      
     run: |
       npm ci 
       npm run build --if-present
