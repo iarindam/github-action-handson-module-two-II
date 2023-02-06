@@ -5,7 +5,11 @@ on:
     branches: ["main"]
 jobs:
   nodejsbuild:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-2016]
+        node-version: [14, 16]
     steps:
       - uses: actions/checkout@v3
       - name: NodejsCI build action
