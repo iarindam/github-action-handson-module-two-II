@@ -1,0 +1,12 @@
+name: Nodejs CI test action
+description: the sample Nodejs CI build action
+runs: 
+  using: "composite"
+  steps:
+  - uses: actions/setup-node@v3
+    with:
+      node-version: ${{ matrix.node-version }}
+  - name: Use Node.js ${{ matrix.node-version }}      
+    run: |
+      npm test
+    shell: bash
