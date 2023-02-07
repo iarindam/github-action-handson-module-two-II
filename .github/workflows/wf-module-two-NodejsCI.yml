@@ -14,6 +14,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: NodejsCI build action
         uses: ./.github/workflows/actions/nodejsbuild
+      - uses: actions/upload-artifact@main
+        with:
+          name: nodejs artifact 
+          path: public/
   nodejstest:
     runs-on: ${{ matrix.os }}
     needs: nodejsbuild
@@ -23,5 +27,5 @@ jobs:
         node-version: [14, 16]
     steps:
       - uses: actions/checkout@v3
-      - name: NodejsCI build action
+      - name: NodejsCI test action
         uses: ./.github/workflows/actions/nodejstest
