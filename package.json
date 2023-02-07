@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/iarindam/github-action-handson-module-two-II#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mocha": "^10.2.0"
   }
 }
