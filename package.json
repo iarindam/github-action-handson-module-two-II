@@ -4,6 +4,7 @@
   "description": "sample npm application",
   "main": "app.js",
   "scripts": {
+    "build": "echo 'hello build'"
     "test": "mocha"
   },
   "repository": {
